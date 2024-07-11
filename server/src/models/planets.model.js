@@ -44,6 +44,9 @@ fs.createReadStream('kepler-data.csv')
         console.log("Done!!!");
     })
 
+// this module is exporting without complete updated data. The reason might be:
+//  the fs.createReadStream and parse.parse methods are used to read and parse a CSV file asynchronously.
+
 module.exports = {
    planets: habitablePlanets,
 }
