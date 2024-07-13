@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
 
-// import {
-//   httpGetLaunches,
-//   httpSubmitLaunch,
-//   httpAbortLaunch,
-// } from './requests';
-
-// alternative way to import
-const {
+import {
   httpGetLaunches,
   httpSubmitLaunch,
   httpAbortLaunch,
-} = require('./requests');
+} from './requests';
+
+// alternative way to import
+// const {
+//   httpGetLaunches,
+//   httpSubmitLaunch,
+//   httpAbortLaunch,
+// } = require('./requests');
 
 function useLaunches(onSuccessSound, onAbortSound, onFailureSound) {
   const [launches, saveLaunches] = useState([]);

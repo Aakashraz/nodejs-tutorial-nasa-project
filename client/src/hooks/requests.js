@@ -1,13 +1,13 @@
 const API_URL = 'http://localhost:8000';
 
 // Load planets and return as JSON.
-async function httpGetPlanets() {
+export async function httpGetPlanets() {
   const response = await fetch(`${API_URL}/planets`);
   return await response.json();
 }
 
 // Load launches, sort by flight number, and return as JSON.
-async function httpGetLaunches() {
+export async function httpGetLaunches() {
   const response = await fetch(`${API_URL}/launches`);
   const fetchedLaunches = await response.json();
   return fetchedLaunches.sort((a, b) => {
@@ -16,7 +16,7 @@ async function httpGetLaunches() {
 }
 
 // Submit given launch data to launch system.
-async function httpSubmitLaunch(launch) {
+export async function httpSubmitLaunch(launch) {
   try {
     return await fetch(`${API_URL}/launches`, {
       method: "post",
@@ -33,7 +33,7 @@ async function httpSubmitLaunch(launch) {
 }
 
 // Delete launch with given ID.
-async function httpAbortLaunch(id) {
+export async function httpAbortLaunch(id) {
   try {
     return await fetch(`${API_URL}/launches/${id}`, {
       method: "delete",
@@ -47,9 +47,12 @@ async function httpAbortLaunch(id) {
 }
 
 
-module.exports = {
+const apiExport = {
   httpGetPlanets,
   httpGetLaunches,
   httpSubmitLaunch,
   httpAbortLaunch,
 }
+
+// to export as a whole using ES6 model
+export default apiExport;

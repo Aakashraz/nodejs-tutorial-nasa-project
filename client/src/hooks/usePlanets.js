@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
-const { httpGetPlanets } = require('./requests');
-// import { httpGetPlanets } from "./requests";
+// const { httpGetPlanets } = require('./requests');
+import { httpGetPlanets } from "./requests";
 
 function usePlanets() {
   const [planets, savePlanets] = useState([]);
