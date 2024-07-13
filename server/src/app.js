@@ -12,7 +12,7 @@ app.use(cors({
 
 // to parse any incoming JSON from the body of incoming requests
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // using the planetsRouter custom middleware
 app.use(planetsRouter);
