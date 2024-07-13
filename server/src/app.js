@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 const cors = require('cors')
@@ -11,6 +12,8 @@ app.use(cors({
 
 // to parse any incoming JSON from the body of incoming requests
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
 // using the planetsRouter custom middleware
 app.use(planetsRouter);
 
